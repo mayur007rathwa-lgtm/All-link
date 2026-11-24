@@ -1,88 +1,175 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a1f5c">
 <title>Mayur C Rathava | Quick Links</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#f2f5fa;--card:#fff;--text:#1b2a41;--muted:#5d6b82;--brand:#0b5ed7;--brand2:#f39c12;--border:#e1e7f0}
-  @media (prefers-color-scheme:dark){:root{--bg:#0f1622;--card:#182233;--text:#e8eef7;--muted:#9fb0c8;--border:#26344b}}
+  :root{
+    --bg:#eef2fb;--card:#ffffff;--text:#13203b;--muted:#64748b;--border:rgba(15,40,100,.08);
+    --navy:#0a1f5c;--blue:#1d4ed8;--sky:#38bdf8;--gold:#f59e0b;--gold2:#fbbf24;
+  }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{width:100%;max-width:100%;overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
-  body{font-family:"Segoe UI",Roboto,"Noto Sans Gujarati",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.4}
-  header{width:100%;background:linear-gradient(135deg,#0b3d91,#0b5ed7);color:#fff;padding:28px 16px 36px;text-align:center}
-  .logo{width:64px;height:64px;border-radius:50%;background:#fff;color:#0b3d91;font-weight:800;font-size:24px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;border:3px solid var(--brand2)}
-  header h1{font-size:24px;color:#fff}
-  header p{color:#fff}
-  header p{opacity:.9;font-size:14px;margin-top:4px}
-  .wrap{max-width:1000px;margin:-18px auto 0;padding:0 16px 32px}
-  .search{display:block;width:100%;max-width:100%;min-width:0;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:15px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+  body{font-family:"Poppins","Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.35;
+    background-image:radial-gradient(circle at 0% 30%,rgba(56,189,248,.10),transparent 40%),radial-gradient(circle at 100% 70%,rgba(245,158,11,.10),transparent 40%)}
+
+  /* ---------- HEADER ---------- */
+  header{position:relative;width:100%;overflow:hidden;color:#fff;text-align:center;padding:30px 16px 64px;
+    background:linear-gradient(135deg,#06143d 0%,#0a1f5c 45%,#1d4ed8 100%)}
+  header::before,header::after{content:"";position:absolute;border-radius:50%;filter:blur(40px);opacity:.55;animation:float 9s ease-in-out infinite}
+  header::before{width:220px;height:220px;background:#38bdf8;top:-80px;left:-60px}
+  header::after{width:200px;height:200px;background:#f59e0b;bottom:-90px;right:-50px;animation-delay:-4s}
+  @keyframes float{50%{transform:translate(20px,15px) scale(1.1)}}
+  .hwrap{position:relative;z-index:1}
+  .bolt{position:absolute;font-size:120px;opacity:.06;right:8px;top:-6px;z-index:0;pointer-events:none}
+  .logo{width:78px;height:78px;margin:0 auto 12px;border-radius:50%;padding:3px;
+    background:conic-gradient(from 0deg,var(--gold),var(--sky),var(--gold2),var(--gold));animation:spin 6s linear infinite}
+  .logo span{display:flex;width:100%;height:100%;border-radius:50%;align-items:center;justify-content:center;
+    background:#0a1f5c;font-weight:700;font-size:26px;letter-spacing:1px;animation:spin 6s linear infinite reverse}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  header h1{font-size:25px;font-weight:700;color:#fff;letter-spacing:.3px}
+  .role{display:inline-block;margin-top:8px;padding:5px 14px;border-radius:30px;font-size:12.5px;color:#fff;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(6px)}
+  .greet{margin-top:12px;font-size:13px;color:#cfe3ff}
+  .greet b{color:var(--gold2);font-weight:600}
+  .wave{position:absolute;bottom:-1px;left:0;width:100%;height:46px;display:block}
+
+  /* ---------- BODY ---------- */
+  .wrap{max-width:1000px;margin:-30px auto 0;padding:0 16px 28px;position:relative;z-index:2}
+  .searchbox{position:relative}
+  .searchbox svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:18px;height:18px;stroke:var(--blue)}
+  .search{display:block;width:100%;max-width:100%;min-width:0;padding:14px 14px 14px 44px;border-radius:16px;border:2px solid transparent;
+    background:var(--card);color:var(--text);font:inherit;font-size:14.5px;outline:none;box-shadow:0 10px 30px rgba(10,31,92,.15);transition:.2s}
+  .search:focus{border-color:var(--sky)}
+
   section{margin-top:26px}
-  h2{font-size:17px;margin-bottom:12px;padding-left:10px;border-left:4px solid var(--brand)}
-  h2.mine{border-color:var(--brand2)}
+  .sec-title{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .sec-title .dot{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;
+    background:linear-gradient(135deg,var(--blue),var(--sky));box-shadow:0 6px 14px rgba(29,78,216,.3)}
+  .sec-title h2{font-size:17px;font-weight:600}
+  .sec-title .count{margin-left:auto;white-space:nowrap;flex-shrink:0;font-size:12px;color:var(--muted);background:var(--card);padding:3px 10px;border-radius:20px;border:1px solid var(--border)}
+  .mine .sec-title .dot{background:linear-gradient(135deg,var(--gold),#f97316);box-shadow:0 6px 14px rgba(245,158,11,.35)}
+
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));gap:12px}
-  a.card{min-width:0;overflow-wrap:anywhere;display:flex;align-items:center;gap:10px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--text);font-weight:600;font-size:14.5px;transition:.15s}
-  a.card:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:0 4px 14px rgba(11,94,215,.15)}
-  a.card .ic{flex:0 0 36px;height:36px;border-radius:9px;background:rgba(11,94,215,.12);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:18px}
-  .mine-grid a.card .ic{background:rgba(243,156,18,.15);color:var(--brand2)}
-  a.card small{display:block;font-weight:400;color:var(--muted);font-size:12px}
-  footer{text-align:center;color:var(--muted);font-size:12px;padding:20px 16px}
+  a.card{position:relative;min-width:0;overflow-wrap:anywhere;display:flex;flex-direction:column;align-items:flex-start;gap:10px;
+    padding:14px;background:var(--card);border:1px solid var(--border);border-radius:18px;text-decoration:none;color:var(--text);
+    font-weight:600;font-size:13.5px;box-shadow:0 4px 14px rgba(15,40,100,.06);transition:transform .2s,box-shadow .2s;
+    opacity:0;animation:pop .45s ease forwards}
+  a.card:hover,a.card:active{transform:translateY(-4px);box-shadow:0 12px 24px rgba(15,40,100,.14)}
+  a.card::after{content:"↗";position:absolute;top:12px;right:14px;font-size:13px;color:#b6c2d6}
+  @keyframes pop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .ic{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;
+    box-shadow:0 6px 12px rgba(0,0,0,.12)}
+  a.card small{display:block;font-weight:400;color:var(--muted);font-size:11.5px;margin-top:2px}
+  /* colourful icon tiles */
+  .g1{background:linear-gradient(135deg,#2563eb,#38bdf8)} .g2{background:linear-gradient(135deg,#7c3aed,#c084fc)}
+  .g3{background:linear-gradient(135deg,#059669,#34d399)} .g4{background:linear-gradient(135deg,#ea580c,#fbbf24)}
+  .g5{background:linear-gradient(135deg,#db2777,#f472b6)} .g6{background:linear-gradient(135deg,#0891b2,#22d3ee)}
+
+  /* own tools: premium gold look */
+  .mine a.card{background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(135deg,var(--gold),#f97316,var(--sky)) border-box;
+    border:2px solid transparent}
+  .mine a.card::before{content:"MY APP";position:absolute;top:12px;right:30px;font-size:9px;font-weight:700;letter-spacing:.6px;
+    color:#b45309;background:#fef3c7;padding:2px 6px;border-radius:6px}
+  .mine .ic{background:linear-gradient(135deg,var(--gold),#f97316)}
+
+  .empty{display:none;text-align:center;color:var(--muted);padding:20px;font-size:14px}
+  footer{text-align:center;color:var(--muted);font-size:12px;padding:10px 16px 26px}
+  footer b{color:var(--blue)}
+
+  @media (prefers-color-scheme:dark){
+    :root{--bg:#0b1222;--card:#141e33;--text:#e7eefc;--muted:#94a3b8;--border:rgba(255,255,255,.07)}
+    a.card::after{color:#475569}
+    .mine a.card::before{background:#422006;color:#fbbf24}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;opacity:1!important}}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">MR</div>
-  <h1>Mayur C Rathava</h1>
-  <p>JE Tech, Division Office, Bodeli</p>
+  <div class="bolt">⚡</div>
+  <div class="hwrap">
+    <div class="logo"><span>MR</span></div>
+    <h1>Mayur C Rathava</h1>
+    <div class="role">⚡ JE Tech · Division Office, Bodeli</div>
+    <p class="greet" id="greet">Welcome</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#eef2fb" id="wavepath" d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,80 L0,80 Z"/></svg>
 </header>
 
 <div class="wrap">
-  <input class="search" id="q" type="search" placeholder="🔍 Search links... (e.g. Billing, GEDA)">
+  <div class="searchbox">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+    <input class="search" id="q" type="search" placeholder="Search links... (e.g. Billing, GEDA)">
+  </div>
 
-  <!-- ===== SECTION 1 : COMMON QUICK LINKS (same as reference page) ===== -->
+  <!-- ===== SECTION 1 : COMMON QUICK LINKS ===== -->
   <section>
-    <h2>Quick Links</h2>
+    <div class="sec-title"><span class="dot">🔗</span><h2>Quick Links</h2><span class="count">18 links</span></div>
     <div class="grid">
-      <a class="card" href="http://otpauthmg.guvnl.in:8240/register/login.php" target="_blank" rel="noopener"><span class="ic">⚡</span>E-Urja</a>
-      <a class="card" href="http://mgbill.eurja.co.in:8010/ltbill/" target="_blank" rel="noopener"><span class="ic">🧾</span>LT Billing</a>
-      <a class="card" href="https://mail.guvnl.com/static/login/" target="_blank" rel="noopener"><span class="ic">✉️</span>E-Mail Service</a>
-      <a class="card" href="https://helpdesk.guvnl.in/" target="_blank" rel="noopener"><span class="ic">🛠️</span>HelpDesk</a>
-      <a class="card" href="https://discom.geourja.com/auth/login" target="_blank" rel="noopener"><span class="ic">🗺️</span>GEO URJA</a>
-      <a class="card" href="https://esarkar.gujarat.gov.in/login.jsp" target="_blank" rel="noopener"><span class="ic">🏛️</span>e-Sarkar</a>
-      <a class="card" href="https://mdm.mgvclinfra.in/ouaf/loginPage.jsp" target="_blank" rel="noopener"><span class="ic">📟</span><span>MDM<small>Smart Meter MDM</small></span></a>
-      <a class="card" href="https://srtgeda.gujarat.gov.in/" target="_blank" rel="noopener"><span class="ic">☀️</span>GEDA Portal</a>
-      <a class="card" href="https://pmsuryaghar.gov.in/#/" target="_blank" rel="noopener"><span class="ic">🏠</span>PM Suryaghar</a>
-      <a class="card" href="https://sky.guvnl.in/login.html" target="_blank" rel="noopener"><span class="ic">🌾</span>SKY Portal</a>
-      <a class="card" href="http://10.0.0.72/new/pages/home.php" target="_blank" rel="noopener"><span class="ic">🏢</span>MGVCL Intranet</a>
-      <a class="card" href="http://10.0.0.72/dar_login.php" target="_blank" rel="noopener"><span class="ic">📋</span>DAR Portal</a>
-      <a class="card" href="https://portal.guvnl.in/login.php?err=202" target="_blank" rel="noopener"><span class="ic">🔌</span>E-Vidhyut Seva</a>
-      <a class="card" href="https://portal.guvnl.in/admin/site/login.php" target="_blank" rel="noopener"><span class="ic">🔐</span>Admin Portal</a>
-      <a class="card" href="https://lookerstudio.google.com/u/0/reporting/879d36c5-d365-4efc-982d-03ba60216255/page/p_6pcmhyviyd" target="_blank" rel="noopener"><span class="ic">📊</span>SM Pendency Dashboard</a>
-      <a class="card" href="https://docs.google.com/spreadsheets/u/0/" target="_blank" rel="noopener"><span class="ic">📗</span>Google Sheet</a>
-      <a class="card" href="https://mgvcl.co.in:8085/SMTDS/Login.php" target="_blank" rel="noopener"><span class="ic">🔋</span>Urja Vitaran Portal</a>
-      <a class="card" href="https://analytics.mgvclinfra.in/analytics" target="_blank" rel="noopener"><span class="ic">📈</span>Smart Meter OUA Tool</a>
+      <a class="card" href="http://otpauthmg.guvnl.in:8240/register/login.php" target="_blank" rel="noopener"><span class="ic g1">⚡</span>E-Urja</a>
+      <a class="card" href="http://mgbill.eurja.co.in:8010/ltbill/" target="_blank" rel="noopener"><span class="ic g2">🧾</span>LT Billing</a>
+      <a class="card" href="https://mail.guvnl.com/static/login/" target="_blank" rel="noopener"><span class="ic g5">✉️</span>E-Mail Service</a>
+      <a class="card" href="https://helpdesk.guvnl.in/" target="_blank" rel="noopener"><span class="ic g4">🛠️</span>HelpDesk</a>
+      <a class="card" href="https://discom.geourja.com/auth/login" target="_blank" rel="noopener"><span class="ic g3">🗺️</span>GEO URJA</a>
+      <a class="card" href="https://esarkar.gujarat.gov.in/login.jsp" target="_blank" rel="noopener"><span class="ic g6">🏛️</span>e-Sarkar</a>
+      <a class="card" href="https://mdm.mgvclinfra.in/ouaf/loginPage.jsp" target="_blank" rel="noopener"><span class="ic g1">📟</span><span>MDM<small>Smart Meter MDM</small></span></a>
+      <a class="card" href="https://srtgeda.gujarat.gov.in/" target="_blank" rel="noopener"><span class="ic g4">☀️</span>GEDA Portal</a>
+      <a class="card" href="https://pmsuryaghar.gov.in/#/" target="_blank" rel="noopener"><span class="ic g3">🏠</span>PM Suryaghar</a>
+      <a class="card" href="https://sky.guvnl.in/login.html" target="_blank" rel="noopener"><span class="ic g3">🌾</span>SKY Portal</a>
+      <a class="card" href="http://10.0.0.72/new/pages/home.php" target="_blank" rel="noopener"><span class="ic g2">🏢</span>MGVCL Intranet</a>
+      <a class="card" href="http://10.0.0.72/dar_login.php" target="_blank" rel="noopener"><span class="ic g6">📋</span>DAR Portal</a>
+      <a class="card" href="https://portal.guvnl.in/login.php?err=202" target="_blank" rel="noopener"><span class="ic g1">🔌</span>E-Vidhyut Seva</a>
+      <a class="card" href="https://portal.guvnl.in/admin/site/login.php" target="_blank" rel="noopener"><span class="ic g5">🔐</span>Admin Portal</a>
+      <a class="card" href="https://lookerstudio.google.com/u/0/reporting/879d36c5-d365-4efc-982d-03ba60216255/page/p_6pcmhyviyd" target="_blank" rel="noopener"><span class="ic g2">📊</span>SM Pendency Dashboard</a>
+      <a class="card" href="https://docs.google.com/spreadsheets/u/0/" target="_blank" rel="noopener"><span class="ic g3">📗</span>Google Sheet</a>
+      <a class="card" href="https://mgvcl.co.in:8085/SMTDS/Login.php" target="_blank" rel="noopener"><span class="ic g4">🔋</span>Urja Vitaran Portal</a>
+      <a class="card" href="https://analytics.mgvclinfra.in/analytics" target="_blank" rel="noopener"><span class="ic g6">📈</span>Smart Meter OUA Tool</a>
     </div>
   </section>
 
   <!-- ===== SECTION 2 : MAYUR'S OWN LINKS / APPS =====
-       નવી link ઉમેરવા નીચેની એક <a ...> line copy કરી, નામ અને URL બદલો. -->
-  <section>
-    <h2 class="mine">Mayur C Rathava's Work Tools</h2>
-    <div class="grid mine-grid">
+       To add a new app: copy one <a ...> line below and change the name and URL. -->
+  <section class="mine">
+    <div class="sec-title"><span class="dot">⭐</span><h2>Mayur C Rathava's Work Tools</h2><span class="count">4 apps</span></div>
+    <div class="grid">
       <a class="card" href="https://re-app.floot.app/login" target="_blank" rel="noopener"><span class="ic">📊</span>RE Progress Dashboard</a>
       <a class="card" href="https://bodeli-division-report.floot.app" target="_blank" rel="noopener"><span class="ic">📝</span>RE Daily Reporting</a>
       <a class="card" href="https://mayur007rathwa-lgtm.github.io/solar-camp/" target="_blank" rel="noopener"><span class="ic">☀️</span>Solar Camp Daily Reporting</a>
       <a class="card" href="https://mayur007rathwa-lgtm.github.io/bodeli-ledger-dashboard/" target="_blank" rel="noopener"><span class="ic">📒</span>Master File Dashboard</a>
     </div>
   </section>
+
+  <p class="empty" id="empty">No link found. Try another word.</p>
 </div>
 
-<footer>© Mayur C Rathava · MGVCL Bodeli</footer>
+<footer>Designed by <b>Mayur C Rathava</b> · MGVCL Bodeli Division</footer>
 
 <script>
+  // staggered entry animation
+  document.querySelectorAll('a.card').forEach(function(c,i){c.style.animationDelay=(i*0.035)+'s';});
+  // greeting + date
+  (function(){
+    var d=new Date(),h=d.getHours();
+    var g=h<12?'Good Morning':h<17?'Good Afternoon':'Good Evening';
+    var dt=d.toLocaleDateString('en-IN',{weekday:'long',day:'2-digit',month:'short',year:'numeric'});
+    document.getElementById('greet').innerHTML=g+' ☀️ · <b>'+dt+'</b>';
+  })();
+  // wave colour follows theme
+  if(window.matchMedia&&matchMedia('(prefers-color-scheme:dark)').matches){document.getElementById('wavepath').setAttribute('fill','#0b1222');}
+  // search
   document.getElementById('q').addEventListener('input',function(){
-    var t=this.value.toLowerCase();
-    document.querySelectorAll('a.card').forEach(function(c){c.style.display=c.textContent.toLowerCase().indexOf(t)>-1?'':'none';});
+    var t=this.value.toLowerCase().trim(),shown=0;
+    document.querySelectorAll('section').forEach(function(sec){
+      var n=0;
+      sec.querySelectorAll('a.card').forEach(function(c){var ok=c.textContent.toLowerCase().indexOf(t)>-1;c.style.display=ok?'':'none';if(ok)n++;});
+      sec.style.display=n?'':'none';shown+=n;
+    });
+    document.getElementById('empty').style.display=shown?'none':'block';
   });
 </script>
 </body>
